@@ -1,0 +1,45 @@
+
+<%- include('./header.ejs') %>
+<body>
+<div class="container">
+    <%if( compte == null) {%>
+        <div class="row">
+            <div class="col-12 center-align">
+                <h4><%= title%></h4>
+            </div>
+            <form class="col s12" method="post" action="connexion" >
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Entrer votre nom" required aria-required="true" name="nom" id="nom" type="text" class="validate">
+                        <label for="nom">Nom</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Entrer votre prénom" required name="prenom" id="prenom" type="text" class="validate">
+                        <label for="prenom">Prénom</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="password" placeholder="Login" type="text" name="login" id="login" required class="validate">
+                        <label for="login">Login</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="password" placeholder="Password" name="password" type="password" required class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="center-align">
+                        <input id="submit"  type="submit" value="Valider le Formulaire" class="validate">
+                        <input id="back"  type="button"  value="Retour" class="validate">
+                    </div>
+                </div>
+            </form>
+        </div>
+    <%} else {%>
+        <h3>Vous êtes déjà inscrit</h3>
+    <%}%>
+</div>
+<%- include('./footer.ejs') %>
+
