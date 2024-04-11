@@ -1,4 +1,6 @@
 
 <%- include('./header.ejs') %>
-<h3>Suite</h3>
+<%if( compte != null) {%>
+    <h3>Welcome <%=compte.nom%></h3>
+<%}%>
 <%- include('./footer.ejs') %>
