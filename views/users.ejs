@@ -1,0 +1,37 @@
+<%- include('./header.ejs') %>
+<div class="row center-align" id="list">
+    <h2>Gerer les comptes</h2>
+    <div class="row"></div>
+    <div class="col s12">
+        <div class="col s3"></div>
+        <% if (comptes.length > 0) {%>
+            <div class="input-field col s6">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Login</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="comptes">
+                        <% for (var i = 0; i < comptes.length; i++) {%>
+                            <tr>
+                                <td><%=comptes[i].login%></td>
+                                <td><%=comptes[i].nom%></td>
+                                <td><%=comptes[i].prenom%></td>
+                                <td class='center-align'><a href='/users/supprimer?accountLogin=<%=comptes[i].login%>' class='delete'><i class='material-icons'>delete</i></a></td>
+                            </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
+        <%} else {%>
+            <h3 class="row center-align" id="comptesMessage">Vous n'avez aucun compte</h3>
+        <%}%>
+        <div class="col s3"></div>
+    </div>
+</div>
+<%- include('./footer.ejs', {includeScript: false}) %>

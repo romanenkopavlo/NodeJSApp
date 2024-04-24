@@ -1,6 +1,4 @@
-
 <%- include('./header.ejs') %>
-<body>
 <div class="container">
     <%if( compte == null) {%>
         <div class="row">
@@ -29,10 +27,9 @@
                     </div>
                 </div>
                 <div class="row">
-
                     <div class="center-align">
-                        <input id="submit"  type="submit" value="Valider le Formulaire" class="validate">
-                        <input id="back"  type="button"  value="Retour" class="validate">
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="buttonApply">Valider le formulaire</button>
+                        <a class="waves-effect waves-light btn" id="buttonReturn" href="/">Retour</a>
                     </div>
                 </div>
             </form>
@@ -41,5 +38,4 @@
         <h3>Vous êtes déjà inscrit</h3>
     <%}%>
 </div>
-<%- include('./footer.ejs') %>
-
+<%- include('./footer.ejs', {includeScript: false}) %>

@@ -1,0 +1,60 @@
+<%- include('./header.ejs') %>
+<div class="modification row center-align">
+    <div class="col s3"></div>
+    <div class="col s6">
+        <div class="row card">
+            <h4>Mes informations</h4>
+            <form action="/users/modifier" method="post">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="text" id="surnameUser" name="nom" placeholder="Entrez nom" value="<%=compte.nom%>" required class="validate">
+                                <label for="surnameUser"></label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="text" id="nameUser" name="prenom" placeholder="Entrez prenom" value="<%=compte.prenom%>" required class="validate">
+                                <label for="nameUser"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="confirmModification row center-align red-text">
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="col s12">
+                            <div class="input-field">
+                                <input type="text" id="loginUser" name="login" placeholder="Entrez login" value="<%=compte.login%>" required class="validate">
+                                <label for="loginUser"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="confirmModification row center-align red-text">
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="col s12">
+                            <div class="input-field">
+                                <input type="password" id="passwordUser" name="password" placeholder="Entrez mot de passe">
+                                <label for="passwordUser"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="confirmModification row center-align red-text">
+                </div>
+                <div class="row">
+                    <div class="center-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="buttonApply">Valider le formulaire</button>
+                        <a class="waves-effect waves-light btn" id="buttonReturn" href="/">Retour</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('./footer.ejs', {includeScript: false}) %>

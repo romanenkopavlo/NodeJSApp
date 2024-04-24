@@ -1,5 +1,4 @@
 <%- include('./header.ejs') %>
-<body>
 <div class="container">
     <%if( compte == null) {%>
     <div class="row">
@@ -8,7 +7,7 @@
         </div>
     </div>
     <%} else {%>
-        <h3> welcome <%=compte.nom%></h3>
-        <%}%>
+        <h3 class="center-align">Welcome <%=compte.nom%></h3>
+    <%}%>
 </div>
-<%- include('./footer.ejs') %>
+<%- include('./footer.ejs', {includeScript: false}) %>

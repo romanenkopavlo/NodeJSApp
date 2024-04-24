@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>test</title>
+  <title>Main</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-
-
-<header></header>
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="modifierLeCompte.html">afficher</a></li>
-  <li><a href="#!">modifier</a></li>
-  <li class="divider"></li>
-  <li><a href="deconnecter.html"><i class="material-icons">settings_power</i></a></li>
-</ul>
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Identification</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-       <%if (compte != null) {%>
-      <li><a href="deconnexion"><i class="material-icons">settings_power</i></a></li>
-      <% }%>
-         <%if (compte == null) {%>
-           <li><a href="/inscription">S'inscrire</a></li>
-         <% }%>
-    </ul>
-  </div>
-</nav>
-
+<header>
+  <nav>
+    <div class="nav-wrapper">
+        <% if (compte == null) {%>
+            <a href="/login" class="brand-logo">Identification</a>
+        <%}%>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <%if (compte != null) {%>
+          <li>
+              <a href="/users/modification">Modifier</a>
+          </li>
+          <li>
+            <a href="/deconnecter"><i class="material-icons">settings_power</i></a>
+          </li>
+        <% }%>
+        <%if (compte == null) {%>
+          <li><a href="/users">Comptes</a></li>
+          <li><a href="/inscription">S'inscrire</a></li>
+        <% }%>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main>

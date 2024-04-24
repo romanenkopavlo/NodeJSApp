@@ -1,6 +1,5 @@
-
 <%- include('./header.ejs') %>
 <%if( compte != null) {%>
-    <h3>Welcome <%=compte.nom%></h3>
+    <h3 class="center-align">Welcome <%=compte.nom%></h3>
 <%}%>
-<%- include('./footer.ejs') %>
+<%- include('./footer.ejs', {includeScript: false}) %>
